@@ -61,13 +61,14 @@ print(f"Average Change: ${average(list_change):.2f}")           #using .2f round
 print(f"Greatest increase in profit: {increase[0]} (${increase[1]})")   #using [0] and [1] for the month captured in list and value accociated with it
 print(f"Greatest decrease in profit: {decrease[0]} (${decrease[1]})")
 
-output_path = os.path.join("analysis", "Financial_Analysis.csv")
+output_path = os.path.join("analysis", "Financial_Analysis.txt")
 
 with open(output_path, 'w') as csvfile:
     csvwriter = csv.writer(csvfile, delimiter=",")
       
     csvwriter.writerow(["Total Months:", total_month])
-    csvwriter.writerow(["Total:", f"${total}"])                                 #using f" to take value as is but still seperating using ","
-    csvwriter.writerow(["Average Change:", f"${average(list_change):.2f}"])
-    csvwriter.writerow(["Greatest increase in profit:", increase[0], f"${increase[1]}"])
-    csvwriter.writerow(["Greatest decrease in profit:", decrease[0], f"${decrease[1]}"])
+    csvwriter.writerow(["-------------------"])
+    csvwriter.writerow(["Total:", f" ${total}"])
+    csvwriter.writerow(["Average Change:", f" ${average(list_change):.2f}"])
+    csvwriter.writerow(["Greatest increase in profit:", increase[0], f" ${increase[1]}"])
+    csvwriter.writerow(["Greatest decrease in profit:", decrease[0], f" ${decrease[1]}"])
